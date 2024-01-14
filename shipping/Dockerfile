@@ -3,10 +3,9 @@
 #
 FROM debian:10 AS build
 
-
-RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get install -y ca-certificates && apt-get clean && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update && apt-get install -y ca-certificates-java openjdk-11-jdk && update-ca-certificates
 RUN apt-get update && apt-get -y install maven
+
 
 WORKDIR /opt/shipping
 
@@ -30,4 +29,3 @@ ENV DB_HOST=mysql
 COPY --from=build /opt/shipping/target/shipping-1.0.jar shipping.jar
 
 CMD [ "java", "-Xmn256m", "-Xmx768m", "-jar", "shipping.jar" ]
-
