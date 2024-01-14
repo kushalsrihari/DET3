@@ -12,14 +12,4 @@ spec:
   selector:
     service: web
   type: NodePort
----
-{{if .Values.ocCreateRoute}}
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: web
-spec:
-  to:
-    kind: Service
-    name: web
-{{end}}
+
