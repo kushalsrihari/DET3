@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        REPO_URL = 'https://github.com/kushalsrihari/DET2.git'
+        REPO_URL = 'https://github.com/kushalsrihari/DET3.git'
         PROJECT_FOLDERS = 'cart,catalogue,dispatch,mongo,mysql,payment,ratings,shipping,user,web'
         DOCKER_REGISTRY = 'kushalsrihari' // Replace with your DockerHub username or organization
     }
