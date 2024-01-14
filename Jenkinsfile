@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Clone the GitHub repository
-                    git branch: 'main', url: REPO_URL
+                    git branch: 'master', url: REPO_URL
                 }
             }
         }
